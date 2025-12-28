@@ -20,6 +20,7 @@ app.get('/:shortId',async (req,res)=>{
             }
         }
     })
+    
     res.redirect(entry.redirectUrl)
 
 })
