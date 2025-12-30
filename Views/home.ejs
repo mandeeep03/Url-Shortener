@@ -5,6 +5,9 @@
 </head>
 <body>
     <h2>Stored URLs</h2>
+    <% if(locals.id) {%>
+        <p>Url Genrated : http://localhost:8001/url/<%= id %></p>
+    <%}%>
     <form method="POST" action="/url">
         <label for="url">
             Enter Your Url :
@@ -13,7 +16,17 @@
         <button type="submit">
             Genrate Url
         </button>
+
+        
     </form> 
+    <div>
+        <ul>
+            <% url.forEach(url => {%>
+               <li>http://localhost:8001/url/<%= url.shortId %></li> 
+                
+           <% }); %>
+        </ul>
+    </div>
     
 </body>
 </html>
